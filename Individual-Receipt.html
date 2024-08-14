@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://i.ibb.co/bsNJkPm/Opay-Logo.png">
+    
+    <title>Opay</title>
+
+    <style>
+ body {
+   font-family: Arial, sans-serif;
+   background-color: #fff;
+   margin: 0;
+   padding: 0;
+}
+ a {
+  text-decoration: none;
+  color: inherit;
+ }
+.container {
+  margin: 0 auto;
+  width: 340px;
+  padding: 7px;
+  padding-bottom: 60px;
+  border: 1px solid none;
+  border-radius: 8px;
+  /*background-color: #000000;*/
+  background-color: #F8F8FA;
+}
+.top {
+ display: flex;
+ flex-direction: row;
+ background-color: #FFF;
+}
+.top p {
+  margin-left: 10px;
+  font-weight: bolder;
+  color: grey;
+}
+.top img {
+  margin-left: 120px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.Transfer-to {
+  border-radius: 8px;
+  background-color: #FFF;
+}
+.Transfer-to img {
+  display: block;
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+#bank-logo {
+  position: relative;
+  bottom: 20px;
+  cursor: pointer;
+}
+#transfer-to {
+  margin-left: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+#amount {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 23px;
+  font-weight: bold;
+}
+#successful {
+  margin-top: -10px;
+  text-align: center;
+  font-size: 13px;
+  color: #22A677;
+}
+.green {
+  display: flex;
+  flex-direction: row;
+}
+#green-tick1 {
+  width: 20px;
+  height: 20px;
+}
+#green-tick2 {
+  width: 20px;
+  height: 20px;
+}
+#green-tick3 {
+  width: 20px;
+  height: 20px;
+}
+#hr1 {
+  position: relative;
+  left: 55px;
+  top: 28px;
+  width: 80px;
+  border: none;
+  height: 2px;
+  background-color: #22A677;
+}
+#hr2 {
+  position: relative;
+  left: -55px;
+  top: 19px;
+  width: 80px;
+  border: none;
+  height: 1.5px;
+  background-color: #22A677;
+}
+.three-status {
+  display: flex;
+  flex-direction: row;
+}
+.three-status p {
+  margin-left: 40px;
+  font-size: 13px;
+  color: #787878;
+}
+#ast {
+  margin-left: 30px;
+}
+#bnd {
+  margin-left: 50px;
+}
+#crd {
+  margin-left: 50px;
+}
+.times {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: row;
+}
+.times p {
+  margin-left: 25px;
+  font-size: 12px;
+  color: #8C8C8C;
+}
+#time2 {
+  margin-left: 30px;
+}
+.five-mins {
+  margin-left: 25px;
+  margin-bottom: -15px;
+  width: 85%;
+  border-radius: 8px;
+  background-color: #F8F8FA;
+}
+.five-mins p {
+  text-align: center;
+  font-size: 12px;
+  padding: 0, 5px;
+  color: #919193;
+}
+.amount1 {
+  margin-left: 15px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.amount1 p {
+  font-size: 13px;
+}
+#amount01 {
+  color: #8C8C8C;
+}
+.fee1 {
+  margin-top: -10px;
+  margin-left: 15px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.fee1 p {
+  font-size: 13px;
+}
+#fee01 {
+  color: #8C8C8C;
+}
+.amount-paid {
+  margin-top: -10px;
+  margin-left: 15px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.amount-paid p {
+  font-size: 13px;
+}
+#amount-paid01 {
+  color: #8C8C8C;
+}
+.transaction-details {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.recipient-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#Transaction-Details {
+  font-size: 12px;
+  font-weight: bold;
+}
+#Recipient-Details {
+  font-size: 13px;
+}
+#recipient-name {
+  padding-left: 10px;
+  font-size: 13px;
+}
+.bank-and-account-no {
+  display: flex;
+  justify-content: right;
+}
+.bank-and-account-no p {
+  margin-top: -10px;
+  font-size: 13px;
+}
+.transactions-type {
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.transactions-type p {
+  font-size: 13px;
+}
+.transaction-number {
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.transaction-number p {
+  font-size: 13px;
+}
+.payment-method {
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.payment-method p {
+  font-size: 13px;
+}
+.transaction-date {
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.transaction-date p {
+  font-size: 13px;
+}
+.session-id {
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.session-id p {
+  font-size: 13px;
+}
+.more-actions {
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.choose-category {
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.choose-category p {
+  font-size: 13px;
+}
+#Recipient-Details, #transactions-type, #Transaction-Number, #Payment-Method, #Transaction-Date, #Session-ID, #Choose-Category {
+  color: #8C8C8C;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 340px;
+  background-color: #F8F8FA;
+  padding-bottom: 10px;
+}
+
+#report-an-issue {
+  margin-top: 5px;
+  width: 150px;
+  height: 45px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #00B875;
+  color: #00B875;
+  background-color: #fff;
+}
+#share-receipt {
+  margin-top: 5px;
+  width: 150px;
+  height: 45px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  background-color: #00B875;
+}
+
+
+
+.error-for-buttons {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.white-error {
+  width: 250px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for better visibility */
+}
+
+.white-error button {
+  display: block;
+  margin: 20px auto 0;
+  width: 80px;
+  height: 33px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #00B875;
+}
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+        <div class="container"> <br>
+
+  <div class="error-for-buttons" id="error-for-buttons">
+    <div class="white-error">
+<p id="error-p">Oops! Our customer service is currently experiencing a high volume of requests. Please try again later.</p>
+<button id="okay">OK</button>
+  </div>
+    </div>
+
+  <div class="top">
+  <p id="top-p"><a href="ReceiptHistory.html">&#x276E;</a> &nbsp;Transaction Details</p>
+  <img src="Images/support-head.jpg" alt="Support">
+        </div>
+  <br></br>
+
+  <div class="Transfer-to">
+<img src="Images/Kuda-Logo.png" alt="bank-logo" id="bank-logo">
+<p id="transfer-to">Transfer to BENJAMIN BULAMA ANAMJA</p>
+<p id="amount">₦50,000.00</p>
+<p id="successful">Successful</p>
+<hr id="hr1">
+<hr id="hr2">
+  <div class="green">
+<img src="Images/Little-green-tick.jpg" alt="green-tick" id="green-tick1">
+<img src="Images/Little-green-tick.jpg" alt="green-tick" id="green-tick2">
+<img src="Images/Little-green-tick.jpg" alt="green-tick" id="green-tick3">
+    </div>
+  <div class="three-status">
+<p id="ast">Payment<br>successful</p>
+<p id="bnd">Processing<br>&nbsp; by bank</p>
+<p id="crd">Received<br>&nbsp; by bank</p>
+  </div>
+  <div class="times">
+<p id="time1">08-28 11:52:37</p>
+<p id="time2">08-28 11:52:37</p>
+<p id="time3">08-28 11:52:37</p>
+  </div>
+  <div class="five-mins">
+<p>The recipient account is expected to be credited within 5 mins, subject to notification by the bank.</p>
+  </div>
+  <div class="amount1">
+<p id="amount01">Amount</p>
+<p id="amount02">₦50,000.00</p>
+  </div>
+  <div class="fee1">
+<p id="fee01">Fee</p>
+<p id="fee02">₦0.00</p>
+  </div>
+  <div class="amount-paid">
+<p id="amount-paid01">Amount Paid</p>
+<p id="amount-paid02">₦50,000.00</p>
+  </div>
+        </div>
+    <br>
+
+  <div class="transaction-details">
+<p id="Transaction-Details">Transaction Details</p>
+  
+  <div class="recipient-details">
+<p id="Recipient-Details">Recipient Details</p>
+<p id="recipient-name">BENJAMIN BULAMA ANAMJA</p>
+  </div>
+  <div class="bank-and-account-no">
+<p id="recipient-bank">Kuda</p>
+<p>&nbsp;|&nbsp;</p>
+<p id="recipient-account-no">2029506660</p>
+  </div>
+  <div class="transactions-type">
+<p id="transactions-type">Transactions Type</p>
+<p id="transfer-to-bank-account">Transfer to Bank Account</p>
+  </div>
+  <div class="transaction-number">
+<p id="Transaction-Number">Transaction Number</p>
+<p id="trans-number">913209511009256792</p>
+  </div>
+  <div class="payment-method">
+<p id="Payment-Method">Payment Method</p>
+<p id="owealth">OWealth</p>
+  </div>
+  <div class="transaction-date">
+<p id="Transaction-Date">Transaction Date</p>
+<p id="transfer-date">Aug 28th, 2024 11:52:37</p>
+  </div>
+  <div class="session-id">
+<p id="Session-ID">Session ID</p>
+<p id="ID-no">108764986620127260728844626024</p>
+  </div>
+    </div>
+  <br>
+
+  <div class="more-actions">
+<p id="More-Actions" style="font-weight: bold;">More Actions</p>
+<div class="choose-category">
+<p id="Choose-Category">Choose Category</p>
+<p id="transfer-category">Transfer</p>
+  </div>
+    </div>
+<br>
+
+  <div class="buttons">
+<button id="report-an-issue">Report an issue</button>
+<button id="share-receipt">Share receipt</button>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Get buttons and error elements
+  const reportButton = document.getElementById("report-an-issue");
+  const shareButton = document.getElementById("share-receipt");
+  const errorContainer = document.getElementById("error-for-buttons");
+  const okButton = document.getElementById("okay");
+
+  // Show error message when a button is clicked
+  reportButton.addEventListener("click", function() {
+    errorContainer.style.display = "flex";
+  });
+
+  shareButton.addEventListener("click", function() {
+    errorContainer.style.display = "flex";
+  });
+
+  // Hide error message when OK button is clicked
+  okButton.addEventListener("click", function() {
+    errorContainer.style.display = "none";
+  });
+});
+
+
+</script>
+
+
+
+
+<script>
+
+  // Function to get query parameters from the URL
+  function getQueryParams() {
+  const params = {};
+  const queryString = window.location.search.substring(1);
+  const regex = /([^&=]+)=([^&]*)/g;
+  let match;
+  while (match = regex.exec(queryString)) {
+  params[decodeURIComponent(match[1])] = decodeURIComponent(match[2]);
+  }
+    return params;
+  }
+  // Call the function and store the result
+const params = getQueryParams();
+
+                
+  // Function to format date
+  function formatDate(dateString) {
+  const options = {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  hour12: true
+  };
+  const date = new Date(dateString);
+  return date.toLocaleString('en-US', options).replace(',', '');
+  }
+
+   // Function to format date as 'MM-DD HH:MM:SS'
+   function formatDateTwo(dateString) {
+    const date = new Date(dateString);
+    
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    
+    return `${month}-${day} ${hours}:${minutes}:${seconds}`;
+  }
+
+  // When the DOM is fully loaded, update the necessary elements
+  document.addEventListener("DOMContentLoaded", function() {
+  const params = getQueryParams();
+  if (params.recipient) {
+  document.getElementById("transfer-to").textContent = `Transfer to ${params.recipient}`;
+  }
+  // Add similar lines here to update other elements if needed
+  document.getElementById("recipient-name").textContent = `${params.recipient}`;
+  document.getElementById("recipient-account-no").textContent = `${params.account}`;
+  document.getElementById("recipient-bank").textContent = `${params.bank}`;
+  document.getElementById("amount").textContent = `₦${params.amount}`;
+  document.getElementById("amount02").textContent = `₦${params.amount}`;
+  document.getElementById("amount-paid02").textContent = `₦${params.amount}`;
+  document.getElementById("transfer-date").textContent = formatDate(params.date);
+  document.getElementById("time1").textContent = formatDateTwo(params.date);
+  document.getElementById("time2").textContent = formatDateTwo(params.date);
+  document.getElementById("time3").textContent = formatDateTwo(params.date);
+
+  // Generate a random 18-digit number
+  const randomNumber = Math.floor(Math.random() * 1e18).toString().padStart(18, '0');
+  // Display the generated number in the element with id "trans-number"
+  document.getElementById("trans-number").textContent = randomNumber;
+
+
+  // Update the bank logo image
+  const bankLogoElement = document.getElementById('bank-logo');
+   const bankName = params.bank; // Get the bank name from the parameter
+    if (bankLogoElement && bankName) {
+  // Capitalize the first letter of the bank name
+  const capitalizedBankName = bankName.charAt(0).toUpperCase() + bankName.slice(1);
+  // Create the image filename based on the capitalized bank name
+  const imageFilename = `${capitalizedBankName.replace(/\s+/g, '-')}-Logo.png`;
+  bankLogoElement.src = `Images/${imageFilename}`;
+}
+
+
+});
+
+</script>
+             
+
+
+
+</body>
+</html>
+

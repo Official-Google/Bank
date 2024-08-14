@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://i.ibb.co/bsNJkPm/Opay-Logo.png">
+    
+    <title>Opay</title>
+    
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+  a {
+    text-decoration: none;
+}
+.container {
+   margin: 0 auto;
+   width: 340px;
+   padding: 7px;
+   border: 1px solid transparent;
+   border-radius: 8px;
+   background-color: #fff;
+}
+.done p {
+   margin-left: 87%;
+   font-weight: 500;
+   color: #11AF75;
+}
+.successful {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+.successful p {
+    font-size: 17px;
+}
+.successful h2 {
+    margin-top: -2px;
+}
+.share {
+   display: flex;
+}
+.useless img {
+   margin-left: 5px;
+}
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="done">
+ 
+ <a href="Receipt.html?price=" id="done-link"><p>Done</p></a>
+        </div>
+  <br></br>
+        <div class="successful">
+  <svg width="65px" height="65px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#00B875"></path> </g></svg>
+
+       <p>Transfer successful</p>
+        
+        <div class="price">
+     <h2 id="price">₦ 0.00</h2>
+            </div>
+        </div>
+
+ <br>   
+    
+
+        <div class="share">
+  <a href="Receipt.html" id="share-link"><img src="Images/Share-Receipt.jpg"> </a>
+  
+  <img src="Images/Add-To-Favourites.jpg">
+               </div> <br></br>
+               
+        <div class="useless">
+<img src="Images/Useless.jpg">          
+           </div>
+           
+    </div>
+  
+  
+    
+  <script>
+    // Function to get the value of a query parameter by name
+    function getQueryParam(param) {
+        // Create a new URLSearchParams object with the query parameters from the current URL
+        const urlParams = new URLSearchParams(window.location.search);
+        // Get the value of the specified query parameter
+        return urlParams.get(param);
+    }
+
+    // Retrieve the value of the 'price' query parameter from the URL
+    const priceValue = getQueryParam('price');
+    // Retrieve the value of the 'name' query parameter from the URL
+    const nameValue = getQueryParam('name');
+    // Retrieve the value of the 'dropdownMenu' query parameter from the URL
+    const dropdownMenuValue = getQueryParam('dropdownMenu');
+    // Retrieve the value of the 'aza' query parameter from the URL
+    const azaValue = getQueryParam('aza');
+
+    // Check if the 'price' query parameter has a value
+    if (priceValue) {
+        // Display the price value in the h2 element with id 'price'
+        document.getElementById('price').textContent = `₦ ${priceValue}`;
+    }
+// Update the 'Done' link with the price, name, bank, and account number values
+document.getElementById('done-link').href = `Receipt.html?price=${priceValue}&name=${nameValue}&dropdownMenu=${dropdownMenuValue}&aza=${azaValue}`;
+// Update the 'Share' link with the price, name, bank, and account number values
+document.getElementById('share-link').href = `Receipt.html?price=${priceValue}&name=${nameValue}&dropdownMenu=${dropdownMenuValue}&aza=${azaValue}`;
+
+   
+
+    // Get the div element with class 'successful' where additional details will be displayed
+    const successfulContainer = document.querySelector('.successful');
+
+    // Check if the 'name' query parameter has a value
+    if (nameValue) {
+        // Create a new p element to display the name
+        const nameElement = document.createElement('p');
+        // Set the text content of the p element to the retrieved name value
+        nameElement.textContent = `Name: ${nameValue}`;
+  //Hide Name element
+  nameElement.style.display = 'none'
+        // Append the p element to the 'successful' div
+        successfulContainer.appendChild(nameElement);
+    }
+
+    // Check if the 'dropdownMenu' query parameter has a value
+    if (dropdownMenuValue) {
+        // Create a new p element to display the bank name
+        const dropdownMenuElement = document.createElement('p');
+        // Set the text content of the p element to the retrieved bank name value
+        dropdownMenuElement.textContent = `Bank: ${dropdownMenuValue}`;
+//Hide dropdownMenuValue element
+dropdownMenuValue.style.display = 'none'
+        // Append the p element to the 'successful' div
+        successfulContainer.appendChild(dropdownMenuElement);
+    }
+
+    // Check if the 'aza' query parameter has a value
+    if (azaValue) {
+        // Create a new p element to display the account number
+        const azaElement = document.createElement('p');
+        // Set the text content of the p element to the retrieved account number value
+        azaElement.textContent = `Account Number: ${azaValue}`;
+        // Hide the account number element by setting its display to none
+        azaElement.style.display = 'none';
+        // Append the p element to the 'successful' div
+        successfulContainer.appendChild(azaElement);
+    }
+
+</script>
+
+  
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://i.ibb.co/bsNJkPm/Opay-Logo.png">
+    
+    <title>Opay</title>
+
+    <style>
+ body {
+   font-family: Arial, sans-serif;
+   background-color: #fff;
+   margin: 0;
+   padding: 0;
+}
+.container {
+  margin: 0 auto;
+  width: 340px;
+  padding: 7px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  /*background-color: #000000;*/
+  background-color: #F8F8FA;
+}
+.back {
+  height: 50px;
+  align-content: center;
+  background-color: #fff;
+}
+.back p {
+  margin-left: 23px;
+  color: grey;
+}
+.top {
+  display: flex;
+  align-items: center;
+}
+.top p {
+  margin-left: 34%;
+  font-size: 14px;
+}
+.top img {
+  margin-left: 20px;
+  width: 68px;
+  height: 20px;
+}
+.reciept {
+  border-radius: 15px;
+  background-color: #fff;
+}
+.price {
+  text-align: center;
+}
+.price h3 {
+  color: #00B875;
+}
+.price #success {
+  margin-top: -8px;
+}
+.price #time {
+  margin-top: -8px;
+  font-size: 10px;
+  color: grey;
+}
+
+
+#trans-type, #money-sent {
+  display: inline-block;
+}
+.trans-type {
+  font-size: 12px;
+}
+#trans-type {
+  margin-left: 20px;
+  color: grey;
+}
+#money-sent {
+  margin-left: 42%;
+  font-weight: bold;
+}
+
+
+#re-details, #re-name {
+  display: inline-block;
+}
+.re-details {
+  margin-top: -5px;
+  font-size: 12px;
+}
+#re-details {
+  margin-left: 20px;
+  color: grey;
+}
+#re-name {
+  float: right;
+  margin-right: 15px;
+  text-align: right;
+  font-weight: bold;
+}
+#re-aza {
+  margin-top: 1px;
+  margin-right: 15px;
+  direction: rtl;
+}
+
+
+#se-details, #se-name {
+  display: inline-block;
+}
+.se-details {
+  margin-top: -5px;
+  font-size: 12px;
+}
+#se-details {
+  margin-left: 20px;
+  color: grey;
+}
+#se-name {
+  margin-left: 18%;
+  font-weight: bold;
+}
+#se-aza {
+  margin-top: -5px;
+  margin-right: 15px;
+  text-align: right;
+}
+
+
+#trans-ref, #trans-ref1 {
+  margin-top: -3px;
+  display: inline-block;
+  color: grey;
+}
+.trans-ref {
+  font-size: 12px;
+}
+#trans-ref1 {
+  margin-left: 20px;
+}
+#trans-ref {
+  margin-left: 18%;
+}
+
+
+.support {
+  font-size: 10px;
+  text-align: center;
+  color: grey;
+}
+
+.extra {
+  margin-top: -20px;
+  padding: 20px;
+  font-size: 10px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#share {
+  width: 280px;
+  height: 45px;
+  border-radius: 25px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  background-color: #00B875;
+}
+    </style>
+    
+</head>
+<body>
+        <div class="container"> <br>
+          <div class="back">
+   <p>< &nbsp;&nbsp;&nbsp;Share Receipt</p>     
+             </div> 
+  <br>
+  
+        <div class="reciept">
+          <div class="top"> <br>
+ <img src="Images/Logo-Receipt.png">
+ <p>Transaction Receipt</p>
+                </div>
+        
+         <div class="price">
+   <h3>₦ </h3>
+   <p id="success">SUCCESS</p>
+   <p id="time"></p>
+   <hr style="width: 90%;">
+              </div>
+              
+      <div class="trans-type">
+   <p id="trans-type">Transaction Type</p>
+   <p id="money-sent">Money sent</p>
+              </div>
+            
+       <div class="re-details">
+   <p id="re-details">Recipient Details</p>
+   <p id="re-name">Recipient Name</p>
+   <p id="re-aza">Recipient Bank | Recipient Aza</p>
+              </div>
+              
+       <div class="se-details">
+  <p id="se-details">Sender Details</p>
+   <p id="se-name">BENJAMIN BULAMA ANAMJA</p>
+   <p id="se-aza">701****696</p>      
+               </div>
+              
+     <div class="trans-ref">
+   <p id="trans-ref1">Transaction Reference</p>
+<p id="trans-ref">240601011574788180</p>
+              </div> 
+              
+    <br></br>
+    
+              
+        <div class="support">
+   <p>Support</p>
+ <p style="color: #00B875;">customerservice@opay-inc.com</p>
+              </div>    
+     
+  <hr style="border: none; border-top: 1px dashed black; width: 85%;">
+ 
+       
+       <div class="extra">     
+<p>Enjoy a better life with OPay. Get free transfers, withdrawals, bill payments, instant loans, and good annual interest on your savings. OPay is licensed by the Central Bank of Nigeria and insured by the NDIC.</p>
+              </div>
+
+  </div>
+ 
+ <br></br><br>
+
+          <div class="button">
+ <button type="button" id="share" style="font-weight: bold;">Return home</button>
+             </div>
+
+</div>
+
+
+<script>
+  
+  document.getElementById("share").addEventListener("click", function() {
+      window.location.href = "index.html";
+  });
+  
+  // Function to get the value of a query parameter by name
+  function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+  }
+  
+  // Get the price, name, bank, and account number values from the URL
+  const priceValue = getQueryParam('price');
+  const nameValue = getQueryParam('name');
+  const bankValue = getQueryParam('dropdownMenu');
+  const accountValue = getQueryParam('aza');
+  
+  // Display the price value in the h3 element
+  if (priceValue) {
+      document.querySelector('.price h3').textContent = `₦ ${priceValue}`;
+  }
+  
+  // Update recipient details
+  if (nameValue) {
+      document.getElementById('re-name').textContent = nameValue;
+  }
+  if (bankValue && accountValue) {
+      document.getElementById('re-aza').textContent = `${bankValue} | ${accountValue}`;
+  }
+  
+  // Function to update the current time
+  function updateTime() {
+      const now = new Date();
+      const options = { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' };
+      document.getElementById('time').textContent = now.toLocaleString('en-GB', options).replace(/,/, '');
+  }
+  
+  updateTime();
+  setInterval(updateTime, 120000); // Update every 2 minutes
+  
+  // Function to generate an 18-digit random number
+  function generateRandomNumber() {
+      let randomNumber = '';
+      for (let i = 0; i < 18; i++) {
+          randomNumber += Math.floor(Math.random() * 10).toString();
+      }
+      return randomNumber;
+  }
+  
+  // Update the trans-ref element with the generated random number
+  const randomRef = generateRandomNumber();
+  document.getElementById('trans-ref').textContent = randomRef;
+  
+  // Save the receipt details to localStorage
+  function saveReceipt() {
+      // Get the recipient name
+      const recipientName = document.getElementById('re-name').textContent;
+  
+      // Get the recipient bank and account number
+      const recipientDetails = document.getElementById('re-aza').textContent.split('|').map(detail => detail.trim());
+      const recipientBank = recipientDetails[0] || "";   // Bank name
+      const recipientAccount = recipientDetails[1] || ""; // Account number
+  
+      // Create an object with receipt details
+      const receipt = {
+          amount: priceValue || "0.00",
+          date: document.getElementById('time').textContent,
+          recipient: recipientName,            // Store recipient name
+          bank: recipientBank,                 // Store bank name separately
+          account: recipientAccount,           // Store account number separately
+          refNo: randomRef,                    // Store generated reference number
+          serviceAmount: getQueryParam('serviceAmount') || "0.00"
+      };
+
+      // Retrieve existing receipts from localStorage or initialize with an empty array
+      let receipts = JSON.parse(localStorage.getItem("receipts")) || [];
+  
+      // Add the new receipt to the array
+      receipts.push(receipt);
+  
+      // Save the updated array back to localStorage
+      localStorage.setItem("receipts", JSON.stringify(receipts));
+  }
+  
+  saveReceipt();
+
+  </script>
+  
+
+
+
+
+</body>
+</html>
