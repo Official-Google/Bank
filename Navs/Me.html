@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="https://i.ibb.co/bsNJkPm/Opay-Logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+<title>Opay</title>
+    
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  margin: 0 auto;
+  width: 340px;
+  padding: 7px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: #F8F8FA;
+}
+.container img {
+  margin-left: -5px;
+  width: 350px;
+}
+
+.menu {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 370px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.menu img {
+  width: 100%;;
+  height: 60px;
+  border-radius: 8px;
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="container"><br>
+    <div class="me">
+        <img src="Images/Me.png">
+    </div>
+
+
+    <div class="menu" id="menu">
+  <img src="Images/Menu-Me.jpg" id="me">
+
+            </div>
+
+  </div>
+
+ 
+ <script>
+document.getElementById('menu').addEventListener('click', function(event) {
+      var x = event.clientX;
+      var width = this.offsetWidth;
+
+if (x < width * 0.2) {
+  // Left 20% clicked, refresh the page
+  window.location = "../index.html"
+} else if (x < width * 0.4) {
+  // Next 20% (20%-40%) clicked,
+  window.location = "Rewards.html";
+} else if (x < width * 0.6) {
+    // Next 20% (40%-60%) clicked,
+  window.location = "Finance.html";
+} else if (x < width * 0.8) {
+  // Next 20% (60%-80%) clicked,
+  window.location = "Cards.html";
+} else {
+  // Last 20% (80%-100%) clicked,
+  window.location = "Me.html";
+}
+});
+
+</script>
+
+ 
+
+
+
+</body>
+</html>
