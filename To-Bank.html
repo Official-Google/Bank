@@ -24,7 +24,6 @@ a {
   padding: 7px;
   border: 1px solid transparent;
   border-radius: 8px;
-  /*background-color: #000000;*/
   background-color: #F8F8FA;
 }
 .back {
@@ -222,6 +221,8 @@ button:hover {
  <option value="Select Bank">Select Bank</option>
 
 <option value="access">Access Bank</option>
+<option value="eco">Eco Bank</option>
+<option value="fcmb">FCMB Bank</option>
 <option value="fidelity">Fidelity Bank</option>
 <option value="first">First Bank</option>
 <option value="gtb">Guaranty Trust Bank</option>
@@ -231,10 +232,14 @@ button:hover {
 <option value="moniepoint">MoniePoint</option>       
 <option value="Opay">Opay</option>
 <option value="palmpay">PalmPay</option>
+<option value="polaris">Polaris Bank</option>
+<option value="stanbic">Stanbic IBTC Bank</option>
+<option value="sterling">Sterling Bank</option>
 <option value="uba">United Bank for Africa</option>
+<option value="union">Union Bank</option>
  <option value="zenith">Zenith Bank</option>
       </select><br>
-  <input type="text" id="name" name="name"><br>
+      <input type="text" id="name" name="name" oninput="convertToUppercase()"><br>
     <div class="button-container">
 <button type="submit" id="submit">Next</button>     
                 </div>
@@ -282,8 +287,8 @@ button:hover {
   <a href="#" id="account4">  
       <div class="accounts">
   <p>Benjamin Bulama Anamja</p>
-  <p style="color: #a2a2a2; margin-top: -10px; font-size: 13px;">8132012610 &nbsp;PalmPay</p>
-  <img src="Images/PalmPay-Logo.png">
+  <p style="color: #a2a2a2; margin-top: -10px; font-size: 13px;">1615329474 &nbsp;Access Bank</p>
+  <img src="Images/Access-Logo.png">
              </div>
              </a>  
              
@@ -302,6 +307,14 @@ button:hover {
   document.getElementById("view-all").style.display = "none";
   document.getElementById("all-accounts").style.display = "flex";
   });
+
+
+  // Convert name to caps
+  function convertToUppercase() {
+    var inputField = document.getElementById("name");
+    inputField.value = inputField.value.toUpperCase();
+}
+
 </script>
 
 <script>
@@ -327,6 +340,12 @@ document.getElementById('details').addEventListener('submit', function(event) {
     switch(dropdownMenu.toLowerCase()) {
       case 'access':
             imageFilename = 'Access-Logo.png';
+            break;
+      case 'eco':
+            imageFilename = 'Eco-Logo.png';
+            break;
+      case 'fcmb':
+            imageFilename = 'Fcmb-Logo.png';
             break;
       case 'fidelity':
             imageFilename = 'Fidelity-Logo.png';
@@ -355,8 +374,20 @@ document.getElementById('details').addEventListener('submit', function(event) {
         case 'palmpay':
             imageFilename = 'Palmpay-Logo.png';
             break;
+        case 'polaris':
+            imageFilename = 'Polaris-Logo.png';
+            break;
+        case 'stanbic':
+            imageFilename = 'Stanbic-Logo.png';
+            break;
+        case 'sterling':
+            imageFilename = 'Sterling-Logo.png';
+            break;
         case 'uba':
             imageFilename = 'Uba-Logo.png';
+            break;
+        case 'union':
+            imageFilename = 'Union-Logo.png';
             break;
         case 'zenith':
             imageFilename = 'Zenith-Logo.png';
