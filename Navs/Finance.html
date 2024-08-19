@@ -1,237 +1,479 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="icon" type="image/png" href="https://i.ibb.co/bsNJkPm/Opay-Logo.png">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <!--<link rel="stylesheet" href="Style.css">-->
+
   <title>Opay</title>
+
+
 
   <style>
 
 
 
+
+
+
+
 body {
+
   font-family: Arial, sans-serif;
+
   background-color: #fff;
+
   margin: 0;
+
   padding: 0;
+
 }
+
 .container {
+
   margin: 0 auto;
+
   width: 330px;
+
   padding-left: 13px;
+
   padding-right: 13px;
+
   border: 1px solid transparent;
+
   border-radius: 8px;
+
   background-color: #FFF;
+
 }
+
 .top {
+
   display: flex;
+
   flex-direction: row;
+
   margin-bottom: -10px;
+
   background-color: #FFF;
+
 }
+
 #settings-image {
+
   margin-top: 22px;
+
   margin-left: 25px;
+
   width: 20px;
+
   height: 20px;
+
 }
+
 #Finance {
+
   font-size: 18px;
+
   font-weight: 900;
+
 }
+
 #blueridgeMFB {
+
   font-size: 13px;
+
   font-weight: 500;
+
   color: #8C8C8C;
+
 }
+
 .total-top {
+
   display: flex;
+
   flex-direction: row;
+
   justify-content: space-between;
+
 }
+
 .total-top p {
+
   font-size: 13px;
+
   font-weight: 500;
+
   color: #8C8C8C;
+
 }
+
 .total-top img {
+
   position: absolute;
+
   margin-top: 15px;
+
   margin-left: 83px;
+
   width: 14px;
+
   height: 11px;
+
 }
+
 .balances {
+
   display: flex;
+
   flex-direction: row;
+
   justify-content: space-between;
+
   margin-top: -10px;
+
 }
+
 .balances p {
+
   font-size: 15px;
+
   font-weight: bold;
+
 }
+
 #bal1 {
+
   margin-left: 10px;
+
 }
+
 #bal2 {
+
   margin-right: 10px;
+
   color: #00B875;
+
 }
+
 .owealth {
+
   padding: 10px;
+
   padding-bottom: 2px;
+
   border-radius: 10px;
+
   background-color: #F6F4FF;
+
 }
+
 #owealth-icon {
+
   margin-top: 5px;
+
   width: 18px;
+
   height: 18px;
+
 }
+
 #owealth1 {
+
   margin-top: -20px;
+
   margin-left: 25px;
+
   font-size: 12px;
+
   font-weight: bold;
+
 }
+
 #daily-returns {
+
   font-size: 12px;
+
   font-weight: bold;
+
   color: #8C8C8C;
+
 }
+
 #bal3 {
+
   font-size: 14px;
+
   font-weight: bolder;
+
 }
+
 .targets_and_savebox {
+
   display: flex;
+
   flex-direction: row;
+
   justify-content: space-between;
+
 }
+
 .targets {
+
   width: 44.5%;
+
   padding: 7px;
+
   border-radius: 10px;
+
   background-color: #F8F8FA;
+
 }
+
 #targets-icon {
+
   width: 18px;
+
   height: 18px;
+
 }
+
 #targets {
+
   margin-top: -20px;
+
   margin-left: 25px;
+
   font-size: 12px;
+
   font-weight: bold;
+
 }
+
 #targets1 {
+
   font-size: 12px;
+
   font-weight: bold;
+
   color: #8C8C8C;
+
 }
+
 .savebox {
+
   width: 44.5%;
+
   padding: 7px;
+
   border-radius: 10px;
+
   background-color: #F8F8FA;
+
 }
+
 #savebox-icon {
+
   width: 18px;
+
   height: 18px;
+
 }
+
 #savebox {
+
   margin-top: -20px;
+
   margin-left: 25px;
+
   font-size: 12px;
+
   font-weight: bold;
+
 }
+
 #savebox1 {
+
   font-size: 12px;
+
   font-weight: bold;
+
   color: #8C8C8C;
+
 }
+
 .fixed_and_spend {
+
   display: flex;
+
   flex-direction: row;
+
   justify-content: space-between;
+
 }
+
 .fixed {
+
   width: 44.5%;
+
   padding: 7px;
+
   border-radius: 10px;
+
   background-color: #F8F8FA;
+
 }
+
 #fixed-icon {
+
   width: 18px;
+
   height: 18px;
+
 }
+
 #fixed {
+
   margin-top: -20px;
+
   margin-left: 25px;
+
   font-size: 12px;
+
   font-weight: bold;
+
 }
+
 #fixed1 {
+
   font-size: 12px;
+
   font-weight: bold;
+
   color: #8C8C8C;
+
 }
+
 .spend {
+
   width: 44.5%;
+
   padding: 7px;
+
   border-radius: 10px;
+
   background-color: #F8F8FA;
+
 }
+
 #spend-icon {
+
   width: 18px;
+
   height: 18px;
+
 }
+
 #spend {
+
   margin-top: -20px;
+
   margin-left: 25px;
+
   font-size: 12px;
+
   font-weight: bold;
+
 }
+
 #spend1 {
+
   font-size: 12px;
+
   font-weight: bold;
+
   color: #8C8C8C;
+
 }
+
 .savings {
+
   width: 44.5%;
+
   padding: 7px;
+
   border-radius: 10px;
+
   background-color: #F8F8FA;
+
 }
+
 #savings-icon {
+
   width: 18px;
+
   height: 18px;
+
 }
+
 #savings {
+
   margin-top: -20px;
+
   margin-left: 25px;
+
   font-size: 12px;
+
   font-weight: bold;
+
 }
+
 #savings1 {
+
   font-size: 12px;
+
   font-weight: bold;
+
   color: #8C8C8C;
+
 }
+
 .insured {
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
 }
+
 #insured {
+
   width: 110px;
+
   height: 90px;
+
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -241,143 +483,294 @@ body {
 
 
 .menu {
+
   position: fixed;
+
   bottom: 0;
+
   left: 50%;
+
   transform: translateX(-50%);
+
   width: 370px;
+
   background-color: #fff;
+
   cursor: pointer;
+
 }
 
+
+
 .menu img {
+
   width: 100%;;
+
   height: 60px;
+
   border-radius: 8px;
+
 }
+
+
+
+
+
+
 
 
 
 
 
 .error-for-buttons {
+
   display: none;
+
   position: fixed;
+
   top: 0;
+
   left: 0;
+
   width: 100%;
+
   height: 100%;
+
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+
   justify-content: center;
+
   align-items: center;
+
   z-index: 1000; /* Ensure it's above other content */
+
 }
+
+
 
 .white-error {
+
   width: 250px;
+
   padding: 20px;
+
   border-radius: 15px;
+
   text-align: center;
+
   background-color: #fff;
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for better visibility */
+
 }
 
+
+
 .white-error button {
+
   display: block;
+
   margin: 20px auto 0;
+
   width: 80px;
+
   height: 33px;
+
   border: none;
+
   border-radius: 10px;
+
   cursor: pointer;
+
   color: #fff;
+
   background-color: #00B875;
+
 }
+
+
+
+
+
 
 
 
 
   </style>
+
 </head>
+
 <body>
+
   <div class="container">
 
+
+
     <div class="error-for-buttons" id="error-for-buttons">
+
       <div class="white-error">
+
   <p id="error-p">Oops! Our customer service is currently experiencing a high volume of requests. Please try again later.</p>
+
   <button id="okay">OK</button>
+
     </div>
+
       </div>
+
   
+
   <div class="top">
+
 <p id="Finance">Finance <span id="blueridgeMFB">from BlueRidge Microfinance Bank</span></p>
+
 <img src="Images/Settings-icon1.jpg" id="settings-image">
+
   </div>
+
+
 
   <div class="total-top">
+
 <p id="total-balance">Total Balance</p>
+
 <img src="Images/eye-open.png" id="eye-image">
+
 <p id="total-interest">Total Interest</p>
+
   </div>
+
+
 
   <div class="balances">
-<p id="bal1">₦ 52,820.00</p>
-<p id="bal2">₦ 8,482.91</p>
+
+<p id="bal1">₦ 573,280.00</p>
+
+<p id="bal2">₦ 24,482.91</p>
+
   </div>
+
+
 
   <div class="owealth" id="owealth-div">
+
 <img src="Images/OWealth-Icon1.jpg" id="owealth-icon">
+
 <p id="owealth1">OWealth</p>
+
 <p id="daily-returns">Your daily returns. You can withdraw at any time.</p>
+
 <br>
-<p id="bal3">₦ 52,820.00</p>
+
+<p id="bal3">₦ 573,280.00</p>
+
   </div>
+
 <br>
+
+
 
   <div class="targets_and_savebox">
+
     <div class="targets" id="targets-div">
+
 <img src="Images/Target-Icon1.jpg" id="targets-icon">
+
 <p id="targets">Targets</p>
+
 <p id="targets1">Save daily, weekly, or monthly towards your goal.</p>
+
 <br></br>
+
     </div>
+
+
 
     <div class="savebox" id="savebox-div">
+
 <img src="Images/SafeBox-Icon1.jpg" id="savebox-icon">
+
 <p id="savebox">SaveBox</p>
+
 <p id="savebox1">Your daily, weekly or monthly automatic savings.</p>
+
 <br></br>
+
     </div>
+
   </div>
+
 <br>
+
+
 
   <div class="fixed_and_spend">
+
     <div class="fixed" id="fixed-div">
+
 <img src="Images/Fixed-Icon1.jpg" id="fixed-icon">
+
 <p id="fixed">Fixed</p>
+
 <p id="fixed1">Min: ₦1000 <br>Tenor: 7-1000 days</p>
+
 <br></br>
+
     </div>
+
+
 
     <div class="spend" id="spend-div">
+
 <img src="Images/Spend-Save1.jpg" id="spend-icon">
+
 <p id="spend">Spend & Save</p>
+
 <p id="spend1">Your percentage savings every time you spend or transfer.</p>
+
 <br></br>
+
     </div>
+
   </div>
+
 <br>
 
+
+
  <div class="savings" id="savings-div">
+
 <img src="Images/Savings-Report1.jpg" id="savings-icon">
+
 <p id="savings">Savings Report</p>
+
 <p id="savings1">Check out your savings journey so far.</p>
+
 <br></br>
+
  </div>
 
+
+
   <div class="insured">
+
 <img src="Images/Insured1.jpg" id="insured">
+
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -393,50 +786,98 @@ body {
 
   <br></br>
 
+
+
     <div class="menu" id="menu">
+
   <img src="Images/Menu-Finance.jpg" id="finance">
+
+
 
     </div>
 
+
+
   </div>
+
  
 
 
 
 
+
+
+
+
+
   <script>
+
 // Select the image and balance elements
+
 const eyeImage = document.getElementById("eye-image");
+
 const balance1 = document.getElementById("bal1");
+
 const balance2 = document.getElementById("bal2");
+
 const balance3 = document.getElementById("bal3");
 
+
+
 // Set initial values
+
 let isHidden = false;
+
 const originalValues = {
-    bal1: "₦ 52,820.00",
-    bal2: "₦ 8,482.91",
-    bal3: "₦ 52,820.00"
+
+    bal1: "₦ 573,280.00",
+
+    bal2: "₦ 24,482.91",
+
+    bal3: "₦ 573,280.00"
+
 };
 
+
+
 // Add event listener for image click
+
 eyeImage.addEventListener("click", () => {
+
     if (isHidden) {
+
         // Show balances and change image to eye open
+
         balance1.textContent = originalValues.bal1;
+
         balance2.textContent = originalValues.bal2;
+
         balance3.textContent = originalValues.bal3;
+
         eyeImage.src = "Images/eye-open.png";
+
     } else {
+
         // Hide balances and change image to eye close
+
         balance1.textContent = "₦ ***";
+
         balance2.textContent = "₦ ***";
+
         balance3.textContent = "₦ ***";
+
         eyeImage.src = "Images/eye-close.png";
+
     }
+
     // Toggle the hidden state
+
     isHidden = !isHidden;
+
 });
+
+
+
 
 
   </script>
@@ -448,31 +889,65 @@ eyeImage.addEventListener("click", () => {
 
 
 
+
+
+
+
+
+
+
+
+
   <script>
+
 document.getElementById("owealth-div").addEventListener("click", function() {
+
   document.getElementById("error-for-buttons").style.display = "flex";
+
 });
+
 document.getElementById("targets-div").addEventListener("click", function() {
+
   document.getElementById("error-for-buttons").style.display = "flex";
+
 });
+
 document.getElementById("savebox-div").addEventListener("click", function() {
+
   document.getElementById("error-for-buttons").style.display = "flex";
+
 });
+
 document.getElementById("fixed-div").addEventListener("click", function() {
+
   document.getElementById("error-for-buttons").style.display = "flex";
+
 });
+
 document.getElementById("spend-div").addEventListener("click", function() {
+
   document.getElementById("error-for-buttons").style.display = "flex";
+
 });
+
 document.getElementById("savings-div").addEventListener("click", function() {
+
   document.getElementById("error-for-buttons").style.display = "flex";
+
 });
+
+
+
 
 
 document.getElementById("okay").addEventListener("click", function() {
+
   document.getElementById("error-for-buttons").style.display = "none";
+
 });
+
     </script>
+
     
 
 
@@ -481,35 +956,75 @@ document.getElementById("okay").addEventListener("click", function() {
 
 
 
+
+
+
+
+
+
+
+
  <script>
+
 document.getElementById('menu').addEventListener('click', function(event) {
+
       var x = event.clientX;
+
       var width = this.offsetWidth;
 
+
+
 if (x < width * 0.2) {
+
   // Left 20% clicked, refresh the page
+
   window.location = "https://bennyboy10.github.io/Bank/"
+
 } else if (x < width * 0.4) {
+
   // Next 20% (20%-40%) clicked,
+
   window.location = "Rewards.html";
+
 } else if (x < width * 0.6) {
+
     // Next 20% (40%-60%) clicked,
+
   window.location = "Finance.html";
+
 } else if (x < width * 0.8) {
+
   // Next 20% (60%-80%) clicked,
+
   window.location = "Cards.html";
+
 } else {
+
   // Last 20% (80%-100%) clicked,
+
   window.location = "Me.html";
+
 }
+
 });
+
+
 
 </script>
 
+
+
  
+
  
+
+
+
+
 
 
 
 </body>
+
 </html>
+
