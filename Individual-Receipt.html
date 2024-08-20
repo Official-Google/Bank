@@ -589,10 +589,17 @@ const params = getQueryParams();
   document.getElementById("time2").textContent = formatDateTwo(params.date);
   document.getElementById("time3").textContent = formatDateTwo(params.date);
 
-  // Generate a random 18-digit number
-  const randomNumber = Math.floor(Math.random() * 1e18).toString().padStart(18, '0');
-  // Display the generated number in the element with id "trans-number"
-  document.getElementById("trans-number").textContent = randomNumber;
+// Generate a random 18-digit number
+const randomNumber18 = Math.floor(Math.random() * 1e18).toString().padStart(18, '0');
+// Display the generated 18-digit number in the element with id "trans-number"
+document.getElementById("trans-number").textContent = randomNumber18;
+
+// Generate a random 30-digit number
+const randomNumber30 = Math.floor(Math.random() * 1e15).toString() + Math.floor(Math.random() * 1e15).toString().padStart(15, '0');
+// Display the generated 30-digit number in the element with id "ID-no"
+document.getElementById("ID-no").textContent = randomNumber30;
+
+
 
 
   // Update the bank logo image
