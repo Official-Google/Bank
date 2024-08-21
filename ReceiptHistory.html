@@ -344,21 +344,21 @@ body {
         </div>
         </div>
         </div>
-        <div class="monthly-transaction">
-          <p id="month" style="display: inline-block;">Current-Month</p><p class="rotate" style="font-weight: bold; display: inline-block;">&nbsp;></p>
-          <p id="inout" style="color: gray;">In: ₦528,351.00 &nbsp; Out: ₦819,225.00</p>
+      <div class="monthly-transaction">
+<p id="month" style="display: inline-block;">Current-Month</p><p class="rotate" style="font-weight: bold; display: inline-block;">&nbsp;></p>
+<p id="inout" style="color: gray;">In: ₦281,700.00 &nbsp; Out: ₦528,351.30</p>
         
         </div>
 
         <hr id="first-hr">
-    <div id="receiptsContainer">
-    </div>
+    <div id="receiptsContainer"></div>
     
 
     <div class="clear">
         <button type="button" id="clearHistoryButton">Clear Receipts</button>
     </div>
-      </div>
+
+</div>
 
          <div class="menu">
   <img src="Images/Trans-History_Nav-bar.png" alt="Nav-Bar">
@@ -382,20 +382,22 @@ body {
     receipts.forEach(receipt => {
         const receiptElement = document.createElement("div");
         receiptElement.className = "receipt";
-        
+
         // Encode URI components for safety
         const recipient = encodeURIComponent(receipt.recipient);
         const amount = encodeURIComponent(receipt.amount);
         const date = encodeURIComponent(receipt.date);
         const bank = encodeURIComponent(receipt.bank);
         const account = encodeURIComponent(receipt.account);
+        const reference = encodeURIComponent(receipt.refNo);
+        const sessionID = encodeURIComponent(receipt.sessionID);
 
         receiptElement.innerHTML = `
             <div class="recent-transaction" id="recent-transaction">
                 <hr id="seperator">
                 <img src="Images/Recent-Transaction-Send.jpg" id="the1">
                 <p id="p1" class="flex-container">
-                    <a href="Individual-Receipt.html?recipient=${recipient}&amount=${amount}&date=${date}&bank=${bank}&account=${account}" class="truncate">Transfer to ${receipt.recipient}</a>
+                    <a href="Individual-Receipt.html?recipient=${recipient}&amount=${amount}&date=${date}&bank=${bank}&account=${account}&refNo=${reference}&sessionID=${sessionID}" class="truncate">Transfer to ${receipt.recipient}</a>
                     <span id="sentAmount">-₦ ${receipt.amount}</span>
                 </p>
                 <p id="time">${receipt.date}</p>
@@ -418,4 +420,4 @@ body {
 
 
 </body>
-    </html>
+</html>
