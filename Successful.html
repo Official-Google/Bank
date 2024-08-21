@@ -67,6 +67,7 @@
             </div>
         </div>
 
+        
  <br>   
     
 
@@ -101,6 +102,9 @@
     const dropdownMenuValue = getQueryParam('dropdownMenu');
     // Retrieve the value of the 'aza' query parameter from the URL
     const azaValue = getQueryParam('aza');
+    // Get the value of the 'transNumber' query from the URL
+    const transNumberValue = getQueryParam('refNo');
+    const sessionIDValue = getQueryParam('sessionID')
 
     // Check if the 'price' query parameter has a value
     if (priceValue) {
@@ -108,11 +112,10 @@
         document.getElementById('price').textContent = `₦ ${priceValue}`;
     }
 // Update the 'Done' link with the price, name, bank, and account number values
-document.getElementById('done-link').href = `Receipt.html?price=${priceValue}&name=${nameValue}&dropdownMenu=${dropdownMenuValue}&aza=${azaValue}`;
+document.getElementById('done-link').href = `Receipt.html?price=${priceValue}&name=${nameValue}&dropdownMenu=${dropdownMenuValue}&aza=${azaValue}&refNo=${transNumberValue}&sessionID=${sessionIDValue}`;
 // Update the 'Share' link with the price, name, bank, and account number values
-document.getElementById('share-link').href = `Receipt.html?price=${priceValue}&name=${nameValue}&dropdownMenu=${dropdownMenuValue}&aza=${azaValue}`;
+document.getElementById('share-link').href = `Receipt.html?price=${priceValue}&name=${nameValue}&dropdownMenu=${dropdownMenuValue}&aza=${azaValue}&refNo=${transNumberValue}&sessionID=${sessionIDValue}`;
 
-   
 
     // Get the div element with class 'successful' where additional details will be displayed
     const successfulContainer = document.querySelector('.successful');
@@ -151,6 +154,32 @@ dropdownMenuValue.style.display = 'none'
         azaElement.style.display = 'none';
         // Append the p element to the 'successful' div
         successfulContainer.appendChild(azaElement);
+    }
+
+
+// Check if the 'refNo' query parameter has a value
+if (transNumberValue) {
+        // Create a new p element to display the transRef
+        const transNumberElement = document.createElement('p');
+        // Set the text content of the p element to the retrieved trans-number value
+        transNumberElement.textContent = `Ref: ${transNumberValue}`;
+//Hide dropdownMenuValue element
+transNumberElement.style.display = 'none'
+        // Append the p element to the 'successful' div
+        successfulContainer.appendChild(transNumberElement);
+    }
+
+
+// Check if the 'sessionID' query parameter has a value
+if (sessionIDValue) {
+        // Create a new p element to display the sessionID
+        const sessionIDValue = document.createElement('p');
+        // Set the text content of the p element to the retrieved sessionID value
+        sessionIDElement.textContent = `Ref: ${sessionIDValue}`;
+//Hide dropdownMenuValue element
+sessionIDElement.style.display = 'none'
+        // Append the p element to the 'successful' div
+        successfulContainer.appendChild(sessionIDElement);
     }
 
 </script>
