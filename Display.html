@@ -36,7 +36,7 @@ body {
    justify-content: center;
    pointer-events: none;
    width: 340px;
-   height: 39%;
+   height: 100%;
    background-color: rgba(0, 0, 0, 0.5);
    z-index: 100;
  }
@@ -46,7 +46,7 @@ body {
    font-size: 14px;
    bottom: 0;
    width: 320px;
-   height: 400px;
+   height: 365px;
    padding-left: 10px;
    padding-right: 10px;
    border-top-left-radius: 12px;
@@ -395,9 +395,13 @@ body {
       <div class="buttonDiv">
   <button type="button" id="submit2">Confirm</button>
        </div>
-  
+
+  <p id="trans-number" style="display: none;">445620103477591550</p>
+  <p id="sessionID" style="display: none;">195380180159718795980353163103</p>
+
     </div>
   
+
   
   <div id="loadingPopup" class="loading-popup">
   <div class="loading-content">
@@ -439,7 +443,7 @@ body {
   document.getElementById('displayDropdownMenu').innerText = localStorage.getItem('dropdownMenu');
   document.getElementById('displayAza').innerText = localStorage.getItem('aza');
 
-  // PIN DIV content
+  // PIN div content
   document.getElementById('sec-name2').innerText = localStorage.getItem('name');
   document.getElementById('sec-bank2').innerText = localStorage.getItem('dropdownMenu');
   document.getElementById('sec-account-no2').innerText = localStorage.getItem('aza');
@@ -450,32 +454,6 @@ body {
   bankLogoElement.src = `Images/${bankLogo}`;
  </script>
 
-
-<script> /*
-  // Change the height and width for the MoniePoint logo
- if (bankLogo === 'MoniePoint-Logo.png') {
-      bankLogoElement.style.width = '50px';
-      bankLogoElement.style.height = '50px';
-  }
-  // Change the height and width for the PalmPay logo
- if (bankLogo === 'PalmPay-Logo.png') {
-      bankLogoElement.style.width = '55px';
-      bankLogoElement.style.height = '50px';
-  }
-  // Change the height and width for the Kuda logo
- if (bankLogo === 'Kuda-Logo.png') {
-      bankLogoElement.style.width = '50px';
-      bankLogoElement.style.height = '50px';
-  }
-  
-  // Change the pic-bg border if filename is Kuda-Logo.png
- if (bankLogo === 'Kuda-Logo.png') {
-  document.querySelector('.pic-bg').style.borderRadius = '10px';
-document.querySelector('.pic-bg').style.height = "50px";
-}
-
-*/
-</script> 
 
   
 
@@ -513,17 +491,20 @@ submitButton.addEventListener('click', function() {
   const nameValue = localStorage.getItem('name');
   const dropdownMenuValue = localStorage.getItem('dropdownMenu');
   const azaValue = localStorage.getItem('aza');
+  const transNumberValue = document.getElementById('trans-number').textContent;
+  const sessionIDValue = document.getElementById('sessionID').textContent;
 
   // Show the loading pop-up
   document.getElementById('loadingPopup').style.display = 'block';
 
   // Delay for 2-3 seconds (2000-3000 milliseconds) before redirecting
   setTimeout(function() {
-    window.location.href = `Successful.html?price=${priceValue}&name=${nameValue}&dropdownMenu=${dropdownMenuValue}&aza=${azaValue}`;
+    window.location.href = `Successful.html?price=${priceValue}&name=${nameValue}&dropdownMenu=${dropdownMenuValue}&aza=${azaValue}&refNo=${transNumberValue}&sessionID=${sessionIDValue}`;
   }, 1000); // Adjust the delay time as needed (in milliseconds)
 });
 
-    
+
+
 </script>
 
  
@@ -538,9 +519,22 @@ document.getElementById('price').addEventListener('blur', function(){
     }
 });
 
+
+// Function to generate a random 18-digit integer
+function generateRandom18Digit() {
+    return (Math.floor(Math.random() * 9e17) + 1e17).toString();
+}
+// Set the content of the <p> element with id 'trans-number'
+document.getElementById('trans-number').textContent = generateRandom18Digit();
+
+
+// Generate a random 30-digit number
+const randomNumber30 = Math.floor(Math.random() * 1e15).toString() + Math.floor(Math.random() * 1e15).toString().padStart(15, '0');
+// Display the generated 30-digit number in the element with id "ID-no"
+document.getElementById("sessionID").textContent = randomNumber30;
+
   
 </script>
     
 </body>
-    </html>
-    
+</html>
