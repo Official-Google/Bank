@@ -68,12 +68,20 @@ a {
   border: 1px solid transparent;
   background-color: #fff;
 }
-.aza #name {
+#name {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+#name {
   display: none;
+  text-align: center;
+  align-items: center;
   margin-top: 5px;
+  margin-bottom: -1px;
+  padding: 5px 10px 0 20px;
   width: 300px;
   height: 40px;
-  padding: 5px 10px 0 20px;
   border-radius: 8px;
   font-size: 17px;
   text-transform: uppercase;
@@ -208,38 +216,52 @@ button:hover {
               </div>
       
        <div class="free-transfer">
-   <img src="Images/Free-Transfer.jpg">            </div>
+   <img src="Images/Free-Transfer.jpg" id="free-transfer">            </div>
   
           <div class="aza">
    <p><b>Recipient Account</b></p>
   
     <form id="details">  
  <input type="tel" id="aza" name="aza" maxlength="10" placeholder="Enter 10 digits Account Number"><br>
-            
+
  <select id="dropdownMenu" name="dropdownMenu">
-          
+    
  <option value="Select Bank">Select Bank</option>
 
-<option value="access">Access Bank</option>
-<option value="eco">Eco Bank</option>
-<option value="fcmb">FCMB Bank</option>
-<option value="fidelity">Fidelity Bank</option>
-<option value="first">First Bank</option>
-<option value="gtb">Guaranty Trust Bank</option>
-<option value="jaiz">Jaiz Bank</option>
-<option value="keystone">Keystone Bank</option>
-<option value="kuda">Kuda MFB</option>
-<option value="moniepoint">MoniePoint</option>       
-<option value="Opay">Opay</option>
-<option value="palmpay">PalmPay</option>
-<option value="polaris">Polaris Bank</option>
-<option value="stanbic">Stanbic IBTC Bank</option>
-<option value="sterling">Sterling Bank</option>
-<option value="uba">United Bank for Africa</option>
-<option value="union">Union Bank</option>
- <option value="zenith">Zenith Bank</option>
+<option value="access" data-code="044">Access Bank</option>
+<option value="carbon" data-code="565">Carbon</option>
+<option value="diamond" data-code="063">Diamond Bank</option>
+<option value="eco" data-code="050">Eco Bank</option>
+<option value="fcmb" data-code="214">FCMB Bank</option>
+<option value="fidelity" data-code="070">Fidelity Bank</option>
+<option value="first" data-code="011">First Bank</option>
+<option value="gtb" data-code="058">Guaranty Trust Bank</option>
+<option value="jaiz" data-code="301">Jaiz Bank</option>
+<option value="keystone" data-code="082">Keystone Bank</option>
+<option value="kuda" data-code="50211">Kuda MFB</option>
+<option value="moniepoint" data-code="50515">MoniePoint</option>       
+<option value="Opay" data-code="999992">Opay</option>
+<option value="palmpay" data-code="999991">PalmPay</option>
+<option value="polaris" data-code="076">Polaris Bank</option>
+<option value="paga" data-code="100002">Paga</option>
+<option value="stanbic" data-code="221">Stanbic IBTC Bank</option>
+<option value="standardchartered" data-code="068">Standard chartered Bank</option>
+<option value="sterling" data-code="232">Sterling Bank</option>
+<option value="taj" data-code="302">TAJ Bank</option>
+<option value="uba" data-code="033">United Bank for Africa</option>
+<option value="union" data-code="032">Union Bank</option>
+<option value="wema" data-code="035">Wema Bank</option>
+ <option value="zenith" data-code="057">Zenith Bank</option>
+ <option value="9psb" data-code="120001">9 Payment Service Bank(9 PSB)</option>
       </select><br>
-      <input type="text" id="name" name="name" oninput="convertToUppercase()"><br>
+
+
+<!--<input type="text" id="name" name="name" class="nameI" style="display: none;">-->
+<p id="name" name="name" class="nameP"></p>
+
+
+
+      <br>
     <div class="button-container">
 <button type="submit" id="submit">Next</button>     
                 </div>
@@ -248,7 +270,7 @@ button:hover {
           
 
    <div class="traffic-monitor">
-<img src="Images/Traffic-Monitor.jpg">       <br></br>      </div>
+<img src="Images/Traffic-Monitor.jpg" id="traffic-monitor">       <br></br>      </div>
 
       <div class="recents">
   <p style="color: #03B776;">Recents</p>&nbsp;<p>Favourites</p>   <p style="margin-left: 110px;">🔍</p>  
@@ -257,7 +279,7 @@ button:hover {
      <div class="more-accounts">
         <a href="#" id="account1">  
       <div class="accounts">
-  <p>Benjamin Bulama Anamja</p>
+  <p>BENJAMIN BULAMA ANAMJA</p>
   <p style="color: #a2a2a2; margin-top: -10px; font-size: 13px;">2029506660 &nbsp;Kuda</p>
   <img src="Images/Kuda-Logo.png">
              </div>
@@ -286,7 +308,7 @@ button:hover {
       <div id="all-accounts">
   <a href="#" id="account4">  
       <div class="accounts">
-  <p>Benjamin Bulama Anamja</p>
+  <p>BENJAMIN BULAMA ANAMJA</p>
   <p style="color: #a2a2a2; margin-top: -10px; font-size: 13px;">1615329474 &nbsp;Access Bank</p>
   <img src="Images/Access-Logo.png">
              </div>
@@ -309,13 +331,9 @@ button:hover {
   });
 
 
-  // Convert name to caps
-  function convertToUppercase() {
-    var inputField = document.getElementById("name");
-    inputField.value = inputField.value.toUpperCase();
-}
-
 </script>
+
+
 
 <script>
 document.getElementById('dropdownMenu').addEventListener('click', function() {
@@ -328,78 +346,95 @@ document.getElementById('details').addEventListener('submit', function(event) {
     // Get the form data
     const aza = document.getElementById('aza').value;
     const dropdownMenu = document.getElementById('dropdownMenu').value;
-    const name = document.getElementById('name').value;
+    const name = document.getElementById('name').textContent;
 
     // Store the data in local storage
     localStorage.setItem('aza', aza);
     localStorage.setItem('dropdownMenu', dropdownMenu);
-    localStorage.setItem('name', name);
+    localStorage.setItem('name', name.toUpperCase());
 
-    // Store the image filename based on the selected bank
-    let imageFilename;
-    switch(dropdownMenu.toLowerCase()) {
-      case 'access':
-            imageFilename = 'Access-Logo.png';
-            break;
-      case 'eco':
-            imageFilename = 'Eco-Logo.png';
-            break;
-      case 'fcmb':
-            imageFilename = 'Fcmb-Logo.png';
-            break;
-      case 'fidelity':
-            imageFilename = 'Fidelity-Logo.png';
-            break;
-      case 'first':
-            imageFilename = 'First-Logo.png';
-            break;
-      case 'gtb':
-            imageFilename = 'Gtb-Logo.png';
-            break;
-        case 'jaiz':
-            imageFilename = 'Jaiz-Logo.png';
-            break;
-        case 'keystone':
-            imageFilename = 'Keystone-Logo.png';
-            break;
-        case 'kuda':
-            imageFilename = 'Kuda-Logo.png';
-            break;
-        case 'moniepoint':
-            imageFilename = 'Moniepoint-Logo.png';
-            break;
-        case 'opay':
-            imageFilename = 'Opay-Logo.png';
-            break;
-        case 'palmpay':
-            imageFilename = 'Palmpay-Logo.png';
-            break;
-        case 'polaris':
-            imageFilename = 'Polaris-Logo.png';
-            break;
-        case 'stanbic':
-            imageFilename = 'Stanbic-Logo.png';
-            break;
-        case 'sterling':
-            imageFilename = 'Sterling-Logo.png';
-            break;
-        case 'uba':
-            imageFilename = 'Uba-Logo.png';
-            break;
-        case 'union':
-            imageFilename = 'Union-Logo.png';
-            break;
-        case 'zenith':
-            imageFilename = 'Zenith-Logo.png';
-            break;
-        default:
-            imageFilename = 'Opay-Logo.png'; // Add a default logo if needed
-    }
-    localStorage.setItem('bankLogo', imageFilename);
+  
+
+// Get the selected bank value
+let selectedBank = document.getElementById('dropdownMenu').value.toLowerCase();
+// Capitalize the first letter and construct the image filename
+let imageFilename = selectedBank.charAt(0).toUpperCase() + selectedBank.slice(1) + '-Logo.png';
+// Store the image filename in localStorage
+localStorage.setItem('bankLogo', imageFilename);
+
+
+
 
     // Redirect to Display.html
     window.location.href = 'Display.html';
 });
+
+// Function to check and update button state
+function checkButtonState() {
+    const nameElement = document.getElementById('name');
+    const submitButton = document.getElementById('submit');
+    const content = nameElement.textContent.trim();
+    
+    if (content === 'Error verifying account Check your internet' || content === '' || content === 'Invalid account or bank') {
+        submitButton.disabled = true;
+        document.getElementById("submit").style.cursor = "not-allowed"
+        document.getElementById("submit").style.backgroundColor = "#BAE9D5"
+    } else {
+        submitButton.disabled = false;
+        document.getElementById("submit").style.cursor = "pointer"
+        document.getElementById("submit").style.backgroundColor = "#00B875"
+    }
+}
+
+// Add event listener for name display update
+document.getElementById('dropdownMenu').addEventListener('change', function() {
+    // Get the account number entered by the user
+    const accountNumber = document.getElementById('aza').value;
+
+    // Get the selected dropdown menu option
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    // Extract the bank code from the data-code attribute of the selected option
+    const dropdownMenuCode = dropdownMenu.options[dropdownMenu.selectedIndex].getAttribute('data-code');
+
+    // Your secret key for Paystack's API (ensure this is kept private and secure)
+    const secretKey = 'sk_live_85e46d5a6da16aec07876f13b58f856467e6c121'; 
+
+    // Construct the API URL to resolve the bank account details
+    const apiUrl = `https://api.paystack.co/bank/resolve?account_number=${accountNumber}&bank_code=${dropdownMenuCode}`;
+
+    // Make an HTTP GET request to the Paystack API
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            // Authorization header with Bearer token (using your secret key)
+            'Authorization': `Bearer ${secretKey}`,
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json()) // Convert the response to JSON
+    .then(data => {
+        // If the API call is successful, display the account holder's name
+        if (data.status) {
+            document.getElementById('name').textContent = `${data.data.account_name}`;
+        } else {
+            // If there's an error (e.g., account not found), show an error message
+            document.getElementById('name').textContent = 'Invalid account or bank';
+        }
+        // Update button state based on new content
+        checkButtonState();
+    })
+    .catch(error => {
+        // If the fetch call itself fails (e.g., network error), show a general error message
+        console.error('Error:', error);
+        document.getElementById('name').textContent = 'Error verifying account Check your internet';
+        // Update button state based on new content
+        checkButtonState();
+    });
+});
+
+// Initial check for button state on page load
+checkButtonState();
 </script>
 
  
@@ -417,13 +452,14 @@ document.getElementById('dropdownMenu').addEventListener('click', function() {
     function fillDetails(accountNumber, bankName, recipientName) {
         document.getElementById('aza').value = accountNumber;
         document.getElementById('dropdownMenu').value = bankName;
-        document.getElementById('name').value = recipientName;
-        document.getElementById('name').style.display = 'block';
+        document.getElementById('name').textContent = recipientName.toUpperCase();
+        document.getElementById('name').style.display = 'flex';
+        checkButtonState();
     }
 
     // Add event listener to account1
     document.getElementById('account1').addEventListener('click', function() {
-        fillDetails('2029506660', 'kuda', 'Benjamin Bulama Anamja');
+        fillDetails('2029506660', 'kuda', 'BENJAMIN BULAMA ANAMJA');
     });
 
 </script>
@@ -453,11 +489,14 @@ document.getElementById('dropdownMenu').addEventListener('click', function() {
 
     // Add event listener to account4
     document.getElementById('account4').addEventListener('click', function() {
-        fillDetails('8132012610', 'palmpay', 'Benjamin Bulama Anamja');
+        fillDetails('1615329474', 'access', 'BENJAMIN BULAMA ANAMJA');
     });
 
     // Add similar event listeners for other accounts if needed
 </script>
+
+
+
 
 </body>
 </html>
