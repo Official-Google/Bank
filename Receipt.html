@@ -139,7 +139,7 @@
   margin-left: 20px;
 }
 #trans-ref {
-  margin-left: 18%;
+  margin-left: 19%;
 }
 
 
@@ -213,6 +213,7 @@
      <div class="trans-ref">
    <p id="trans-ref1">Transaction Reference</p>
 <p id="trans-ref">240601011574788180</p>
+<p id="sessionID" style="display: none;">195380180159718795980353163103</p>
               </div> 
               
     <br></br>
@@ -246,7 +247,7 @@
   document.getElementById("share").addEventListener("click", function() {
       window.location.href = "index.html";
   });
-  
+
   // Function to get the value of a query parameter by name
   function getQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -258,6 +259,9 @@
   const nameValue = getQueryParam('name');
   const bankValue = getQueryParam('dropdownMenu');
   const accountValue = getQueryParam('aza');
+  const transNumberValue = getQueryParam('refNo'); // Retrieve the trans-number
+  const sessionIDValue = getQueryParam('sessionID'); // Retrieve the sessionID number
+  
   
   // Display the price value in the h3 element
   if (priceValue) {
@@ -271,6 +275,14 @@
   if (bankValue && accountValue) {
       document.getElementById('re-aza').textContent = `${bankValue} | ${accountValue}`;
   }
+  // Update trans-ref
+  if (transNumberValue) {
+      document.getElementById('trans-ref').textContent = transNumberValue;
+  }
+  // Update sessionID
+  if (sessionIDValue) {
+      document.getElementById('sessionID').textContent = sessionIDValue;
+  }
   
   // Function to update the current time
   function updateTime() {
@@ -282,19 +294,10 @@
   updateTime();
   setInterval(updateTime, 120000); // Update every 2 minutes
   
-  // Function to generate an 18-digit random number
-  function generateRandomNumber() {
-      let randomNumber = '';
-      for (let i = 0; i < 18; i++) {
-          randomNumber += Math.floor(Math.random() * 10).toString();
-      }
-      return randomNumber;
-  }
+
   
-  // Update the trans-ref element with the generated random number
-  const randomRef = generateRandomNumber();
-  document.getElementById('trans-ref').textContent = randomRef;
-  
+
+
   // Save the receipt details to localStorage
   function saveReceipt() {
       // Get the recipient name
@@ -304,7 +307,9 @@
       const recipientDetails = document.getElementById('re-aza').textContent.split('|').map(detail => detail.trim());
       const recipientBank = recipientDetails[0] || "";   // Bank name
       const recipientAccount = recipientDetails[1] || ""; // Account number
-  
+      const transRef = document.getElementById('trans-ref').textContent; // Transaction Ref
+      const sessionID = document.getElementById('sessionID').textContent; // sessionID number
+
       // Create an object with receipt details
       const receipt = {
           amount: priceValue || "0.00",
@@ -312,7 +317,8 @@
           recipient: recipientName,            // Store recipient name
           bank: recipientBank,                 // Store bank name separately
           account: recipientAccount,           // Store account number separately
-          refNo: randomRef,                    // Store generated reference number
+          refNo: transRef,                    // Store reference number
+          sessionID: sessionID,                    // Store reference number
           serviceAmount: getQueryParam('serviceAmount') || "0.00"
       };
 
