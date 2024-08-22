@@ -1,93 +1,1047 @@
 <!DOCTYPE html>
+
+
+
 <html lang="en">
+
+
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="icon" type="image/png" href="https://i.ibb.co/bsNJkPm/Opay-Logo.png">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  
+
   <title>Opay</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      margin: 0 auto;
-      width: 340px;
-      padding: 7px;
-      border: 1px solid transparent;
-      border-radius: 8px;
-      background-color: #F8F8FA;
-    }
-    .container img {
-      margin-top: -20px;
-      margin-left: -5px;
-      width: 350px;
-    }
+
+
+
+
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  background-color: #fff;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+a {
+
+  text-decoration: none;
+
+}
+
+.container {
+
+  margin: 0 auto;
+
+  width: 330px;
+
+  padding-left: 13px;
+
+  padding-right: 13px;
+
+  border: 1px solid transparent;
+
+  border-radius: 8px;
+
+  background-color: #E1F5EA;
+
+}
+
+.top {
+
+  background-color: #E1F5EA;
+
+}
+
+#bonus-icon {
+
+  position: absolute;
+
+  margin-left: 263px;
+
+  margin-top: 55px;
+
+  width: 80px;
+
+  height: 80px;
+
+}
+
+.rewards {
+
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  margin-bottom: -18px;
+
+  background-color: #E1F5EA;
+
+}
+
+#rewards {
+
+  font-size: 18px;
+
+  font-weight: 900;
+
+}
+
+#rewards-top {
+
+  margin-top: 25px;
+
+  margin-right: 10px;
+
+  width: 28px;
+
+  height: 28px;
+
+}
+
+.cashback {
+
+  display: flex;
+
+  flex-direction: row;
+
+  margin-bottom: -8px;
+
+}
+
+#cashback {
+
+  margin-left: 15px;
+
+}
+
+#voucher {
+
+  margin-left: 80px;
+
+}
+
+#cashback, #voucher {
+
+  font-size: 13px;
+
+  font-weight: inherit;
+
+  color: #8C8C8C;
+
+}
+
+#plus {
+
+  position: absolute;
+
+  margin-top: -55px;
+
+  margin-left: 135px;
+
+  font-weight: bold;
+
+  color: #10B876;
+
+}
+
+#reset {
+
+  position: absolute;
+
+  margin-top: -55px;
+
+  margin-left: 125px;
+
+  font-weight: bold;
+
+  color: #10B876;
+
+}
+
+.prices {
+
+  display: flex;
+
+  flex-direction: row;
+
+  background-color: #E1F5EA;
+
+}
+
+#symbol1, #price1, #voucher1, #kobo {
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  color: #10B876;
+
+}
+
+#kobo {
+
+  margin-top: 11px;
+
+  font-size: 15px;
+
+}
+
+#price1, #voucher1 {
+
+  margin-top: 2px;
+
+  font-size: 23px;
+
+}
+
+#symbol1 {
+
+  margin-top: 6px;
+
+  margin-left: 13px;
+
+  font-size: 18px;
+
+}
+
+#voucher1 {
+
+  margin-left: 43px;
+
+}
+
+#symbol2, #symbol3 {
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  color: #8C8C8C;
+
+}
+
+#symbol2 {
+
+  margin-top: 10px;
+
+  margin-left: 12px;
+
+}
+
+#symbol3 {
+
+  margin-top: 10px;
+
+  margin-left: 8px;
+
+}
+
+.friday-freebie {
+
+  position: absolute;
+
+  margin-top: -330px;
+
+  width: 310px;
+
+  height: 60px;
+
+  padding: 7px;
+
+  border-radius: 10px;
+
+  background-color: #FFF;
+
+  z-index: 1000;
+
+}
+
+#friday-freebie {
+
+  margin-top: -53px;
+
+  margin-left: 57px;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+}
+
+#check-in {
+
+  margin-top: -11px;
+
+  margin-left: 58px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  color: #8C8C8C;
+
+}
+
+#check-voucher {
+
+  margin-top: -11px;
+
+  margin-left: 58px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  color: #8C8C8C;
+
+}
+
+#friday-freebie-img {
+
+  margin-top: 5px;
+
+  width: 48px;
+
+  height: 48px;
+
+}
+
+#get-now {
+
+  position: absolute;
+
+  margin-top: -50px;
+
+  margin-left: 220px;
+
+  width: 85px;
+
+  height: 30px;
+
+  border-radius: 20px;
+
+  border: none;
+
+  cursor: pointer;
+
+  color: #fff;
+
+  background-color: #10B876;
+
+}
+
+.other-bg {
+
+  margin-left: -13px;
+
+  width: 107.8%;
+
+  height: 300px;
+
+  background-color: #F8F8FA;
+
+}
+
+#daily-bonus {
+
+  position: absolute;
+
+  margin-top: 55px;
+
+  margin-left: 15px;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+}
+
+
+
+.glo-section {
+
+  position: absolute;
+
+  margin-top: -210px;
+
+  width: 310px;
+
+  height: 60px;
+
+  padding: 7px;
+
+  border-radius: 10px;
+
+  background-color: #FFF;
+
+  z-index: 1000;
+
+}
+
+#glo-airtime {
+
+  margin-top: -53px;
+
+  margin-left: 57px;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+}
+
+#glo-airtime1 {
+
+  margin-top: -11px;
+
+  margin-left: 58px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  color: #8C8C8C;
+
+}
+
+#glo-airtime2 {
+
+  margin-top: -11px;
+
+  margin-left: 58px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  color: #8C8C8C;
+
+}
+
+#glo-section-img {
+
+  margin-top: 5px;
+
+  width: 48px;
+
+  height: 48px;
+
+}
+
+#go1 {
+
+  position: absolute;
+
+  margin-top: -50px;
+
+  margin-left: 255px;
+
+  width: 45px;
+
+  height: 30px;
+
+  border-radius: 20px;
+
+  border: none;
+
+  cursor: pointer;
+
+  color: #fff;
+
+  background-color: #10B876;
+
+}
+
+
+
+
+
+.mtn-section {
+
+  position: absolute;
+
+  margin-top: -130px;
+
+  width: 310px;
+
+  height: 60px;
+
+  padding: 7px;
+
+  border-radius: 10px;
+
+  background-color: #FFF;
+
+  z-index: 1000;
+
+}
+
+#mtn-airtime {
+
+  margin-top: -53px;
+
+  margin-left: 57px;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+}
+
+#mtn-airtime1 {
+
+  margin-top: -11px;
+
+  margin-left: 58px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  color: #8C8C8C;
+
+}
+
+#mtn-airtime2 {
+
+  margin-top: -11px;
+
+  margin-left: 58px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  color: #8C8C8C;
+
+}
+
+#mtn-section-img {
+
+  margin-top: 5px;
+
+  width: 48px;
+
+  height: 48px;
+
+}
+
+#go2 {
+
+  position: absolute;
+
+  margin-top: -50px;
+
+  margin-left: 255px;
+
+  width: 45px;
+
+  height: 30px;
+
+  border-radius: 20px;
+
+  border: none;
+
+  cursor: pointer;
+
+  color: #fff;
+
+  background-color: #10B876;
+
+}
+
+
+
+.view-all {
+
+  position: absolute;
+
+  display: flex;;
+
+  text-align: center;
+
+  justify-items: center;
+
+  justify-content: center;
+
+  margin-top: -60px;
+
+  margin-left: 125px;
+
+}
+
+#view-all {
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  color: #10B876;
+
+}
+
+
+
+.bottom {
+
+  position: absolute;
+
+  margin-top: 0px;
+
+  margin-left: -13px;
+
+  width: 356px;
+
+  height: 30px;
+
+  background-color: #E1F5EA;
+
+}
+
+#rewards-bottom {
+
+  margin-bottom: -20px;
+
+  margin-left: -13px;
+
+  width: 356px;
+
+  height: 150px;
+
+}
+
+
+
+
+
+
 
 .menu {
+
   position: fixed;
+
   bottom: 0;
+
   left: 50%;
+
   transform: translateX(-50%);
+
   width: 370px;
+
   background-color: #fff;
+
   cursor: pointer;
+
 }
 
 .menu img {
+
   width: 100%;;
+
   height: 60px;
+
   border-radius: 8px;
+
 }
+
+
+
+
+
 
 
   </style>
+
 </head>
+
 <body>
-  <div class="container"><br>
+
+  <div class="container">
+
+
+
+  <div class="top"><br>
+
+<img src="Images/Bonus-icon.png" id="bonus-icon">
+
     <div class="rewards">
-      <img src="Images/Rewards.jpg">
+
+<p id="rewards">Rewards</p>
+
+<img src="Images/Rewards-top.jpg" id="rewards-top">
+
     </div>
 
 
-    <div class="menu" id="menu">
-  <img src="Images/Menu-Rewards.jpg" id="rewards">
 
-            </div>
+    <div class="cashback">
+
+<p id="cashback">🪙 Cashback</p>
+
+<p id="voucher">Voucher</p>
+
+    </div>
+
+
+
+<p id="plus" style="display: none;">+₦30</p>
+
+<p id="reset" style="display: none;">Balance Reset!</p>
+
+
+
+    <div class="prices">
+
+<p id="symbol1">₦&nbsp;</p>
+
+<p id="price1">865</p>
+
+<p id="kobo">.19</p>
+
+<p id="symbol2">></p>
+
+<p id="voucher1">1</p>
+
+<p id="symbol3">></p>
+
+    </div>
 
   </div>
 
- 
- <script>
-document.getElementById('menu').addEventListener('click', function(event) {
-      var x = event.clientX;
-      var width = this.offsetWidth;
 
-if (x < width * 0.2) {
-  // Left 20% clicked, refresh the page
-  window.location = "../index.html"
-} else if (x < width * 0.4) {
-  // Next 20% (20%-40%) clicked,
-  window.location = "";
-} else if (x < width * 0.6) {
-    // Next 20% (40%-60%) clicked,
-  window.location = "Finance.html";
-} else if (x < width * 0.8) {
-  // Next 20% (60%-80%) clicked,
-  window.location = "Cards.html";
-} else {
-  // Last 20% (80%-100%) clicked,
-  window.location = "Me.html";
-}
-});
+
+<br>
+
+
+
+  <div class="other-bg">
+
+<p id="daily-bonus">Daily Bonus</p>
+
+  </div>
+
+
+
+
+
+  <div class="friday-freebie">
+
+<img src="Images/Friday-freebie.jpg" id="friday-freebie-img">
+
+<p id="friday-freebie">Friday Freebie!</p>
+
+<p id="check-in">Check in 7 days to get</p>
+
+<p id="check-voucher">200 voucher!</p>
+
+<button id="get-now">Get Now</button>
+
+  </div>
+
+
+
+
+
+
+
+  <div class="glo-section">
+
+<img src="Images/Little-phone.jpg" id="glo-section-img">
+
+<p id="glo-airtime">Glo Airtime🪙<spain id="green" style="color: #10B876;">+1%</spain></p>
+
+<p id="glo-airtime1">Buy Airtime and get up to</p>
+
+<p id="glo-airtime2">6% cashback</p>
+
+<a href=""><button id="go1">Go</button></a>
+
+  </div>
+
+
+
+
+
+  <div class="mtn-section">
+
+<img src="Images/Little-phone.jpg" id="mtn-section-img">
+
+<p id="mtn-airtime">MTN Airtime🪙<spain id="green" style="color: #10B876;">+1%</spain></p>
+
+<p id="mtn-airtime1">Buy Airtime and get up to</p>
+
+<p id="mtn-airtime2">4% cashback</p>
+
+<a href=""><button id="go2">Go</button></a>
+
+  </div>
+
+
+
+  <div class="view-all">
+
+  <a href=""><p id="view-all">View all &#x276F;</p></a>
+
+  </div>
+
+
+
+<img src="Images/Rewards-bottom.jpg" id="rewards-bottom">
+
+  <div class="bottom">
+
+<br><br><br>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <br></br>
+
+  <br></br>
+
+  <br></br>
+
+
+
+    <div class="menu" id="menu">
+
+  <img src="Images/Menu-Rewards.jpg" id="rewards">
+
+
+
+            </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+  // Get the elements
+
+  const priceElement = document.getElementById('price1');
+
+  const symbolElement2 = document.getElementById('get-now');
+
+  const symbolElement3 = document.getElementById('rewards-top');
+
+  const plusElement = document.getElementById('plus');
+
+  const resetElement = document.getElementById('reset');
+
+
+
+  // Check if there is a saved price in localStorage on page load
+
+  window.addEventListener('DOMContentLoaded', function() {
+
+    let savedPrice = localStorage.getItem('price1');
+
+    if (savedPrice !== null) {
+
+      priceElement.textContent = parseInt(savedPrice).toLocaleString();
+
+    }
+
+  });
+
+
+
+  // Add an event listener for the 'tap' (click) event on symbol2
+
+  symbolElement2.addEventListener('click', function() {
+
+    // Remove commas, convert the price1 value to a number, and add 50
+
+    let currentPrice = parseInt(priceElement.textContent.replace(/,/g, ''));
+
+    let newPrice = currentPrice + 50;
+
+
+
+    // Format the number with commas if it reaches 1,000 or more
+
+    priceElement.textContent = newPrice.toLocaleString();
+
+
+
+    // Save the updated price to localStorage
+
+    localStorage.setItem('price1', newPrice);
+
+
+
+    // Display the plusElement as flex
+
+    plusElement.style.display = "flex";
+
+
+
+    // Wait for 2 seconds (2000 milliseconds) before hiding the plusElement
+
+    setTimeout(function() {
+
+      plusElement.style.display = 'none';
+
+    }, 2000);
+
+  });
+
+
+
+  // Add an event listener for the 'tap' (click) event on symbol3 to reset the price
+
+  symbolElement3.addEventListener('click', function() {
+
+    // Reset the price1 value to 865
+
+    let resetPrice = 865;
+
+
+
+    // Update the price1 element and save the reset value to localStorage
+
+    priceElement.textContent = resetPrice.toLocaleString();
+
+    localStorage.setItem('price1', resetPrice);
+
+
+
+    // Display the resetElement as flex
+
+    resetElement.style.display = "flex";
+
+
+
+    // Wait for 2 seconds before hding the resetElement
+
+    setTimeout(function() {
+
+      resetElement.style.display = "none";
+
+    }, 2000);
+
+  });
 
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
+
+ <script>
+
+document.getElementById('menu').addEventListener('click', function(event) {
+
+      var x = event.clientX;
+
+      var width = this.offsetWidth;
+
+
+
+if (x < width * 0.2) {
+
+  // Left 20% clicked, refresh the page
+
+  window.location = "https://bennyboy10.github.io/Bank/"
+
+} else if (x < width * 0.4) {
+
+  // Next 20% (20%-40%) clicked,
+
+  window.location = "";
+
+} else if (x < width * 0.6) {
+
+    // Next 20% (40%-60%) clicked,
+
+  window.location = "Finance.html";
+
+} else if (x < width * 0.8) {
+
+  // Next 20% (60%-80%) clicked,
+
+  window.location = "Cards.html";
+
+} else {
+
+  // Last 20% (80%-100%) clicked,
+
+  window.location = "Me.html";
+
+}
+
+});
+
+
+
+</script>
+
+
+
  
+
+ 
+
   
+
 </body>
+
 </html>
+
+  
